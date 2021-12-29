@@ -417,7 +417,7 @@ class DCRNNSupervisor(metaclass=DCRNNSuperVisorMeta):
                     train_iterator = data['train_loader'].get_iterator()
 
                     for batch_i, (x, y) in enumerate(train_iterator):
-                        self._logger.info("Training the METR-LA / PEMS-bay dataset, batch " + batch_i)
+                        self._logger.info("Training the METR-LA / PEMS-bay dataset, batch " + str(batch_i))
                         if args.dp:
                             if batch_i % dcrnn_model.batch_per_lot == 0:
                                 optimizer.zero_grad()
